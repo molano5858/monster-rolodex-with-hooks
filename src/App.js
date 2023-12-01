@@ -2,6 +2,7 @@ import { Component } from "react"; // we shoul import this to write components w
 import "./App.css";
 import MyClassComponent from "./3.classComponentPractice.js";
 import CardList from "./components/card-list/CardList.js";
+import { MyComponent } from "./MyComponent.js";
 
 // API to bring the monsters
 // https://jsonplaceholder.typicode.com/users
@@ -80,10 +81,12 @@ class App extends Component {
         {filteredMonster.map((monster) => {
           return <h1 key={monster.id}>{monster.name}</h1>;
         })} */}
-        {/* <CardList
+
+        <MyComponent/>
+        <CardList
           filteredMonster={filteredMonster}
           miProp={"Hola bebe que mas pues"}
-        /> */}
+        /> 
 
         <MyClassComponent />
       </div>
