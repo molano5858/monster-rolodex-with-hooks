@@ -82,7 +82,7 @@ class App extends Component {
           return <h1 key={monster.id}>{monster.name}</h1>;
         })} */}
 
-        <MyComponent/>
+       
         <CardList
           filteredMonster={filteredMonster}
           miProp={"Hola bebe que mas pues"}
