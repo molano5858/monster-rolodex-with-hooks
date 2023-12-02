@@ -2,7 +2,7 @@ import { Component } from "react"; // we shoul import this to write components w
 import "./App.css";
 import MyClassComponent from "./3.classComponentPractice.js";
 import CardList from "./components/card-list/CardList.js";
-import { MyComponent } from "./MyComponent.js";
+import { SearchBox } from "./components/search-box/SearchBox.js";
 
 // API to bring the monsters
 // https://jsonplaceholder.typicode.com/users
@@ -22,17 +22,8 @@ class App extends Component {
   componentDidMount() {
     // Mounting is the first time a componente get placed into DOM, esto solo pasa una vez en el ciclo de vida
     fetch(apiUrl)
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        this.setState(
-          () => {
-            return { monsters: data };
-          },
-          () => {}
-        );
-      });
+      .then((response)=>response.json())
+      .then((users)=>this.setState(()=>{return {monsters:users}}));
   }
 
   // async componentDidMount() {
@@ -47,6 +38,8 @@ class App extends Component {
   //     }
   //   );
   // }
+
+ 
 
   onSearchChange = (event) => {
     const searchField = event.target.value.toLowerCase();
@@ -70,12 +63,7 @@ class App extends Component {
     });
     return (
       <div className="App">
-        <input
-          className="search-box"
-          placeholder="Search Monster"
-          type="search"
-          onChange={onSearchChange}
-        />
+        <SearchBox onChanceHandler={onSearchChange} placeholder="Search Monster" className="monsters-search-box"/>
         {/* 
         esta funcionalidad es puesta en el componente CardList 
         {filteredMonster.map((monster) => {
@@ -88,7 +76,7 @@ class App extends Component {
           miProp={"Hola bebe que mas pues"}
         /> 
 
-        <MyClassComponent />
+        {/* <MyClassComponent /> */}
       </div>
     );
   }
