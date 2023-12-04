@@ -63,6 +63,7 @@ class App extends Component {
     });
     return (
       <div className="App">
+        <h1 className="app-title">Monster´s Rolodex </h1>
         <SearchBox onChanceHandler={onSearchChange} placeholder="Search Monster" className="monsters-search-box"/>
         {/* 
         esta funcionalidad es puesta en el componente CardList 
