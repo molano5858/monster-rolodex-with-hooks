@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Component } from "react"; // we shoul import this to write components with Class Syntax
 import "./App.css";
 import MyClassComponent from "./3.classComponentPractice.js";
