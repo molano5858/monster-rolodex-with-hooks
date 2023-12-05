@@ -6,7 +6,7 @@ function CardList({filteredMonster}){
   return(
     <div className="card-list">
       {filteredMonster.map((monster)=>(
-       <Card monster={monster}/>
+       <Card key={monster.id} monster={monster}/>
       ))}
     </div>
   )

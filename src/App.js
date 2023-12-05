@@ -20,12 +20,12 @@ function App (){
 
   useEffect(()=>{
     fetch(apiUrl)
-      .then((response)=>response.json())
-      .then((users)=>setMonsters(users));
-
+    .then((response)=>response.json())
+    .then((users)=>setMonsters(users));
+    
   },[])
-
-
+  
+  
   useEffect(()=>{
     const newFilteredMonster = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField);
