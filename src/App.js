@@ -15,7 +15,7 @@ function App (){
   const [monsters, setMonsters]=useState([]);
   // vamos a ver como usar useEffect() solo cuando cambien los monstruos filtrados
   const [stringField,setStringField]=useState('')// se crea un segundo search box para que solo renderice cuando cambien filteredmonsters
-  const [filteredMonster,setFilteredMonsters]=useState(monsters)// valor inicial el estado de monsters
+  const [filteredMonster2,setFilteredMonsters2]=useState(monsters)// valor inicial el estado de monsters
   
 
   useEffect(()=>{
@@ -30,7 +30,7 @@ function App (){
     const newFilteredMonster = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField);
     });
-    setFilteredMonsters(newFilteredMonster);
+    setFilteredMonsters2(newFilteredMonster);
       console.log('debe de cambiar solo cuando escribo en el primer searchbox')
     },[monsters,searchField])// quiero que cambie el estado filteredMonsters solo cuando cambie monsters o searchField
 
@@ -44,7 +44,10 @@ function App (){
   }; 
 
   
-  
+  const filteredMonster = monsters.filter((monster) => {
+    return monster.name.toLowerCase().includes(searchField);
+  });
+
 
 
   return(
@@ -57,7 +60,6 @@ function App (){
        
          <CardList
            filteredMonster={filteredMonster}
-           miProp={"Hola bebe que mas pues"}
          /> 
 
        </div>
